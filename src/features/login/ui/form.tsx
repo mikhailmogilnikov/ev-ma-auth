@@ -130,12 +130,15 @@ export function LoginForm() {
         <ArrowRight weight="bold" className="size-4" />
       </Button>
 
-      <Link to={APP_ROUTES.REGISTER} className="font-medium text-center">
+      <p className="font-medium text-center">
         <span className="text-foreground/50">Don't have an account?</span>{" "}
-        <span className="underline hover:opacity-80 transition-opacity underline-offset-4">
+        <Link
+          to={APP_ROUTES.REGISTER}
+          className="underline hover:opacity-80 transition-opacity underline-offset-4"
+        >
           Sign up
-        </span>
-      </Link>
+        </Link>
+      </p>
     </Flex>
   );
 }
