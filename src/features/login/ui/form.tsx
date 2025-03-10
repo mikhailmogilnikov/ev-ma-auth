@@ -61,8 +61,12 @@ export function LoginForm() {
       onSubmit={handleSubmitForm(handleSubmit)}
       col
       className="max-w-sm w-full"
+      aria-labelledby="login-heading"
+      noValidate
     >
-      <h1 className="text-2xl font-bold">Sign in</h1>
+      <h1 id="login-heading" className="text-2xl font-bold">
+        Sign in
+      </h1>
 
       <FormField
         hideLabel
@@ -90,7 +94,7 @@ export function LoginForm() {
         <InputPassword
           placeholder="Password"
           id={LoginFormFields.PASSWORD}
-          autoComplete={LoginFormFields.PASSWORD}
+          autoComplete="current-password"
           aria-invalid={!!errors.password}
           {...register(LoginFormFields.PASSWORD)}
         />
