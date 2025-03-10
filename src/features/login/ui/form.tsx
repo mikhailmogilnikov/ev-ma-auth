@@ -81,6 +81,8 @@ export function LoginForm() {
           autoComplete={LoginFormFields.EMAIL}
           id={LoginFormFields.EMAIL}
           aria-invalid={!!errors.email}
+          aria-required="true"
+          aria-errormessage={errors.email?.message}
           {...register(LoginFormFields.EMAIL)}
         />
       </FormField>
@@ -96,6 +98,8 @@ export function LoginForm() {
           id={LoginFormFields.PASSWORD}
           autoComplete="current-password"
           aria-invalid={!!errors.password}
+          aria-required="true"
+          aria-errormessage={errors.password?.message}
           {...register(LoginFormFields.PASSWORD)}
         />
       </FormField>
@@ -111,7 +115,6 @@ export function LoginForm() {
         <Link
           to={APP_ROUTES.FORGOT_PASSWORD}
           className="text-foreground underline hover:opacity-80 transition-opacity underline-offset-4"
-          aria-label="Reset password"
         >
           Reset
         </Link>
@@ -121,18 +124,13 @@ export function LoginForm() {
         type="submit"
         color="inverse"
         className="mt-4 gap-2"
-        aria-label="Continue login"
         isLoading={isSubmitting}
       >
         Continue
         <ArrowRight weight="bold" className="size-4" />
       </Button>
 
-      <Link
-        to={APP_ROUTES.REGISTER}
-        className="font-medium text-center"
-        aria-label="Sign up"
-      >
+      <Link to={APP_ROUTES.REGISTER} className="font-medium text-center">
         <span className="text-foreground/50">Don't have an account?</span>{" "}
         <span className="underline hover:opacity-80 transition-opacity underline-offset-4">
           Sign up
