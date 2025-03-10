@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+  font-weight: 400;
+
+  & :focus-visible {
+    outline-color: var(--color-focus);
+    outline-offset: 0.2rem;
+  }
+
+  /* Remove webkit autofill styles */
+  :-webkit-autofill,
+  :-webkit-autofill:hover,
+  :-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+@theme {
+  --color-background: hsl(0, 0%, 5%);
+  --color-foreground: hsl(0, 0%, 95%);
+  --color-default: hsl(0, 0%, 10%);
+  --color-default-foreground: var(--color-foreground);
+  --color-primary: hsl(213, 100%, 56%);
+  --color-focus: hsl(213, 100%, 56%);
+
+  --animate-ios-spinner: ios-spinner 1.2s linear infinite;
+
+  @keyframes ios-spinner {
+    0% {
+      opacity: 0;
+    }
+    8% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@layer components {
+  .transition-transform-colors {
+    transition-property: filter, transform, translate, scale, rotate, colors,
+      opacity, color, background-color, border-color, text-decoration-color,
+      fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(
+      --tw-ease,
+      var(--default-transition-timing-function)
+    );
+    transition-duration: var(--default-transition-duration);
+  }
+}
