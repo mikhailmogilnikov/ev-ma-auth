@@ -96,13 +96,11 @@ export function LoginForm() {
         />
       </FormField>
 
-      <Flex align="center" className="gap-2">
-        <Checkbox
-          id={LoginFormFields.REMEMBER}
-          label="Remember me"
-          {...register(LoginFormFields.REMEMBER)}
-        />
-      </Flex>
+      <Checkbox
+        id={LoginFormFields.REMEMBER}
+        label="Remember me"
+        {...register(LoginFormFields.REMEMBER)}
+      />
 
       <p className="text-base font-medium">
         <span className="text-foreground/50">Forgot password?</span>{" "}
